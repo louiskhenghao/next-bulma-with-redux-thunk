@@ -1,0 +1,102 @@
+@import './theme';
+
+.full-width {
+  width: 100%;
+}
+.full-height {
+  height: 100vh;
+}
+.full-height-min {
+  min-height: 100vh;
+}
+.flex-vertical-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &.left {
+    align-items: flex-start;
+  }
+  &.right {
+    align-items: flex-end;
+  }
+}
+.flex-horizontal-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  &.left {
+    align-items: flex-start;
+  }
+  &.right {
+    align-items: flex-end;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+// ============= HELPER
+// ----- Image
+.object-fit_fill {
+  object-fit: fill;
+}
+.object-fit_contain {
+  object-fit: contain;
+}
+.object-fit_cover {
+  object-fit: cover;
+}
+.object-fit_none {
+  object-fit: none;
+}
+.object-fit_scale-down {
+  object-fit: scale-down;
+}
+
+// ----- padding
+$spacial-properties: 'padding', 'margin';
+$spacial-dimensions: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70,
+  75, 80;
+$spacial-directions: 't', 'b', 'l', 'r', '';
+
+@each $prop in $spacial-properties {
+  @each $direction in $spacial-directions {
+    @each $dimension in $spacial-dimensions {
+      $p-key: '';
+
+      @if $prop == 'padding' {
+        $p-key: 'p';
+      } @else if $prop == 'margin' {
+        $p-key: 'm';
+      }
+
+      .#{$p-key}#{$direction}#{$dimension} {
+        $dir: '';
+
+        @if $direction == 't' {
+          $dir: 'top';
+        } @else if $direction == 'b' {
+          $dir: 'bottom';
+        } @else if $direction == 'l' {
+          $dir: 'left';
+        } @else if $direction == 'r' {
+          $dir: 'right';
+        }
+
+        $unit: 0;
+
+        @if $dimension > 0 {
+          $unit: #{$dimension}px;
+        }
+        @if $dir != '' {
+          #{$prop}-#{$dir}: #{$unit} !important;
+        } @else {
+          #{$prop}: #{$unit} !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "styled-jsx": {
+          "plugins": ["styled-jsx-plugin-sass"]
+        }
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "presets": [["next/babel", { "preset-env": { "modules": "commonjs" } }]]
+    }
+  },
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "cwd": "babelrc",
+          "components": "./components",
+          "containers": "./containers",
+          "screens": "./screens",
+          "store": "./store",
+          "styles": "./styles",
+          "assets": "./static/assets"
+        }
+      }
+    ]
+  ]
+}
