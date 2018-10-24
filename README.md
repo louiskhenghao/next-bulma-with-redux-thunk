@@ -2,6 +2,10 @@
 
 > A Starter project for `nextJs` with implementation react, redux, redux-thunk, selectors, immutable and [Bulma CSS framework](https://bulma.io/documentation/).
 
+## Demo
+
+https://codesandbox.io/s/github/louiskhenghao/next-bulma-with-redux-thunk
+
 ## How to run app
 
 ### Run development build
