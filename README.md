@@ -45,6 +45,10 @@ serve -p 8080
   - /YourSmartComponent
     - component.jsx
     - connector.jsx
+/screens
+  - /YourScreenComponent
+    - index.jsx
+    - styles.jsx
 /pages
   - YourPage.js
 /store
